@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: hsla(107, 92%, 23%, 0.889);
+                opacity: 0.9;
+            }
+            h1
+            {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: 800;
+            }
+            button{
+                background-color: #183b19;
+                width: 10%;
+                padding: 15px;
+                color: rgb(255, 255, 255);
+                border-radius: 8px;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+                background-color: rgb(213, 206, 195);
+                border-radius: 50%;
+            }
+            form{
+                border: 3px solid #90d6ef;
+            }
+            input[type=email],input[type=password]{
+                width: 30%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border-radius: 8px;
+                box-sizing: border-box;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 20px;
+                background-color: rgb(156, 239, 168);
+                opacity: 0.9;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 20%;
+                border-radius: 50%;
+            }  
+        </style>
+    </head>
+    <body>
+        <center><h1>Login Form</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'avatar_img1.jpg' %}" alt="Avatar" class="avatar">
+                </div>
+                <label for ='email'><b>UserEmail :  </b></label>
+                <input type="email" placeholder="Enter email" name="email" float="right"  required><br>  
+                <label for='password'><b>Password : </b></label>
+                <input type="password" placeholder="Enter Password" name="password" required><br>  
+                <button type="submit"><b>Login</b></button><br><br>  
+                DON'T HAVE ACCOUNT !! <br> <a href="http://localhost:8000/signup/">register </a>
+            </div></center>
+        </form>
+    </body>
+</html>
